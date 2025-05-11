@@ -16,9 +16,18 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
     implementation 'org.springframework.boot:spring-boot-starter-web:3.1.0'
     implementation 'org.swinglabs:swingx:1.6.2'
+    implementation 'com.toedter:jcalendar:1.4'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
 }
 
 application {
     mainClass = 'ASimulatorSystem.Main' // Update with your actual main class
+}
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'ASimulatorSystem.Main'
+        )
+    }
 } 
