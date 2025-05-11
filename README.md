@@ -1,43 +1,57 @@
-# ATM Simulator System ✨
+# Trinity Rich Bank ATM Simulator
 
 ## Overview
-The **ATM Simulator System** is a Java-based project that replicates the functionalities of a real-world ATM. It enables users to perform essential banking operations such as opening a bank account, deposits, withdrawals, mini statements, and PIN changes. The project is designed to provide an intuitive and user-friendly experience, ensuring secure and seamless financial transactions. 🏦💳
+Trinity Rich Bank is a robust, Java-based ATM Simulator that replicates real-world banking operations. This project has been modernized to follow industry best practices, making it modular, readable, and scalable. It is designed to work independently as a full-featured ATM simulation, while also being future-ready for integration with AI/ML models and other advanced features.
 
-## Motivation 💡
-With the growing need for digital banking solutions, we embarked on this project to simulate ATM functionalities while deepening our understanding of Java programming, database connectivity, and GUI development. Java is widely used for developing secure and scalable financial applications, making it an ideal choice for this project. Our goal was to bridge the gap between theoretical learning and real-world applications by developing a fully functional ATM system.
+## Key Features
+- **Standalone ATM Simulator:** Fully functional for account management, deposits, withdrawals, mini statements, PIN changes, and more.
+- **Modern Java Codebase:** Uses Gradle, Java 17+, and up-to-date dependencies for security and maintainability.
+- **Modular Architecture:** Clear separation of UI, service, DAO, and integration layers for easy maintenance and extensibility.
+- **Industry-Standard Practices:** JDBC for database access, Swing for UI, and REST client scaffolding for future integrations.
+- **Future-Ready:** Designed to easily integrate with Python-based AI/ML models (e.g., for fake note detection) via REST API, but works perfectly as a standalone Java project.
 
-## Features 🛠
-- **User Authentication**: Secure login system for account holders.
-- **Open Banking Account**: Allows new users to create an account.
-- **Deposit and Withdrawal**: Users can deposit and withdraw money seamlessly.
-- **Mini Statement**: Provides transaction history.
-- **PIN Change**: Users can update their PIN securely.
+## Tech Stack
+| Component | Technology |
+|-----------|------------|
+| Frontend  | Java Swing (UI) |
+| Backend   | Java (Core, JDBC, REST Client) |
+| Database  | MySQL |
+| ML Model (future) | TensorFlow/Keras (Python) |
+| API (future) | Flask/FastAPI (Python) |
+| Integration (future) | REST API (Java ↔ Python) |
 
-## Technologies Used 💻
-- **Java**: Core application development, leveraging object-oriented principles.
-- **Swing & AWT**: GUI design for an interactive and user-friendly interface.
-- **JDBC**: Database connectivity for handling transactions efficiently.
-- **MySQL**: Backend database for secure storage of user details and transactions.
+## Project Structure
+```
+src/ASimulatorSystem/
+  ui/           # UI classes (Login, Signup, Transactions, Deposit, etc.)
+  service/      # Business logic (DepositService, AuthService, etc.)
+  dao/          # Database access (DatabaseConnection, etc.)
+  integration/  # REST API client for future ML model (MLNoteVerifier)
+```
 
-## Installation 📝
-1. Clone the repository:
-   ```bash
-   git clone <repo-url>
-   ```
-2. Open the project in NetBeans or any Java IDE.
-3. Configure the MySQL database and update connection details in `Conn.java`.
-4. Run the project and start using the ATM functionalities.
+## Setup Instructions
+### 1. Java Application
+- Install JDK 17 or later
+- Install Gradle
+- Configure MySQL and update credentials in `DatabaseConnection.java`
+- Build and run:
+  ```sh
+  gradle build
+  gradle run
+  ```
 
-## Future Enhancements 🔄
-- Implementing biometric authentication for enhanced security.
-- Adding multi-language support for a diverse user base.
-- Integration with UPI payments for seamless digital transactions.
+### 2. (Optional, Future) Python ML API
+- If/when you want to add AI/ML features, set up your Python model (Flask/FastAPI) and expose a REST endpoint.
+- The Java app is ready to communicate with such an API for features like fake note detection.
 
-## Team Members 👥
-- **[Parth Garg](https://github.com/ParthGarg0304)**
-- **[Nishant Sheoran](https://github.com/nishant-sheoran)**
-- **[Trishita Yadav](https://github.com/triishita)**
+## UI/UX Modernization
+- All screens use modern Swing layouts and components for a better user experience.
+- Consistent look and feel across all operations.
 
-## License 📚
-This project is open-source and available under the [MIT License](https://github.com/nishant-sheoran/Trinity-Rich-Bank/blob/main/LICENSE).
+## Contributing & Extending
+- The modular codebase makes it easy to add new features, integrate with other systems, or use as a base for future projects.
+- See code comments and JavaDoc for guidance.
+
+## License
+MIT
 
