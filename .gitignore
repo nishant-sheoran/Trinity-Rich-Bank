@@ -13,7 +13,7 @@ nbproject/
 *.jar
 *.war
 *.ear
-
+!gradle/wrapper/gradle-wrapper.jar
 # OS files
 .DS_Store
 Thumbs.db
